@@ -156,13 +156,17 @@ export default function OTConektLanding() {
             </div>
 
             <div className="hidden md:flex items-center space-x-4">
-              <Button
-                variant="outline"
-                className="border-emerald-600 text-emerald-600 hover:bg-emerald-50 bg-transparent"
-              >
-                Join as Therapist
-              </Button>
-              <Button className="bg-emerald-600 hover:bg-emerald-700">Download App</Button>
+              <Link href="https://expo.dev/accounts/saintdannyyy/projects/otconekt/builds/76f2ef78-9b8c-4960-adcd-c4a07887de92" target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="outline"
+                  className="border-emerald-600 text-emerald-600 hover:bg-emerald-50 bg-transparent w-full md:w-auto"
+                >
+                  Join as Therapist
+                </Button>
+              </Link>
+              <Link href="https://expo.dev/accounts/saintdannyyy/projects/otconekt/builds/76f2ef78-9b8c-4960-adcd-c4a07887de92" target="_blank" rel="noopener noreferrer">
+                <Button className="bg-emerald-600 hover:bg-emerald-700 w-full md:w-auto">Download App</Button>
+              </Link>
             </div>
 
             {/* Mobile menu button */}
@@ -203,13 +207,17 @@ export default function OTConektLanding() {
                 Security
               </Link>
               <div className="px-3 py-2 space-y-2">
-                <Button
-                  variant="outline"
-                  className="w-full border-emerald-600 text-emerald-600 hover:bg-emerald-50 bg-transparent"
-                >
-                  Join as Therapist
-                </Button>
-                <Button className="w-full bg-emerald-600 hover:bg-emerald-700">Download App</Button>
+                <Link href="https://expo.dev/accounts/saintdannyyy/projects/otconekt/builds/76f2ef78-9b8c-4960-adcd-c4a07887de92" target="_blank" rel="noopener noreferrer">
+                  <Button
+                    variant="outline"
+                    className="w-full border-emerald-600 text-emerald-600 hover:bg-emerald-50 bg-transparent"
+                  >
+                    Join as Therapist
+                  </Button>
+                </Link>
+                <Link href="https://expo.dev/accounts/saintdannyyy/projects/otconekt/builds/76f2ef78-9b8c-4960-adcd-c4a07887de92" target="_blank" rel="noopener noreferrer">
+                  <Button className="w-full bg-emerald-600 hover:bg-emerald-700">Download App</Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -240,10 +248,12 @@ export default function OTConektLanding() {
                 your fingertips.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4 sm:justify-center lg:justify-start">
-                <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-lg px-8 py-3 shadow-lg transition-all duration-200">
-                  <Download className="mr-2 h-5 w-5" />
-                  Download App
-                </Button>
+                <Link href="https://expo.dev/accounts/saintdannyyy/projects/otconekt/builds/76f2ef78-9b8c-4960-adcd-c4a07887de92" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-lg px-8 py-3 shadow-lg transition-all duration-200">
+                    <Download className="mr-2 h-5 w-5" />
+                    Download App
+                  </Button>
+                </Link>
                 <Button
                   size="lg"
                   variant="outline"
@@ -382,7 +392,9 @@ export default function OTConektLanding() {
                       </li>
                     ))}
                   </ul>
+                <Link href="https://expo.dev/accounts/saintdannyyy/projects/otconekt/builds/76f2ef78-9b8c-4960-adcd-c4a07887de92" target="_blank" rel="noopener noreferrer">
                   <Button className="mt-6 w-full bg-blue-600 hover:bg-blue-700">Start Free Trial</Button>
+                </Link>
                 </CardContent>
               </Card>
             </div>
@@ -408,7 +420,9 @@ export default function OTConektLanding() {
                       </li>
                     ))}
                   </ul>
+                <Link href="https://expo.dev/accounts/saintdannyyy/projects/otconekt/builds/76f2ef78-9b8c-4960-adcd-c4a07887de92" target="_blank" rel="noopener noreferrer">
                   <Button className="mt-6 w-full bg-emerald-600 hover:bg-emerald-700">Join as Therapist</Button>
+                </Link>
                 </CardContent>
               </Card>
             </div>
@@ -589,23 +603,26 @@ export default function OTConektLanding() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <Button size="lg" className="bg-white text-emerald-600 hover:bg-gray-100 text-lg px-8 py-3">
-              <Download className="mr-2 h-5 w-5" />
-              Download for iOS
-            </Button>
-            <Button size="lg" className="bg-white text-emerald-600 hover:bg-gray-100 text-lg px-8 py-3">
-              <Download className="mr-2 h-5 w-5" />
-              Download for Android
-            </Button>
+            <Link href="https://expo.dev/accounts/saintdannyyy/projects/otconekt/builds/76f2ef78-9b8c-4960-adcd-c4a07887de92" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="bg-white text-emerald-600 hover:bg-gray-100 text-lg px-8 py-3">
+                <Download className="mr-2 h-5 w-5" />
+                Download for iOS
+              </Button>
+            </Link>
+            <Link href="https://expo.dev/accounts/saintdannyyy/projects/otconekt/builds/76f2ef78-9b8c-4960-adcd-c4a07887de92" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="bg-white text-emerald-600 hover:bg-gray-100 text-lg px-8 py-3">
+                <Download className="mr-2 h-5 w-5" />
+                Download for Android
+              </Button>
+            </Link>
           </div>
 
           <div className="flex justify-center">
             <Image
-              src="/placeholder.svg?height=150&width=150"
+              src="/qr.png?height=2000&width=200"
               alt="QR Code for App Download"
               width={150}
               height={150}
-              className="bg-white p-4 rounded-lg"
             />
           </div>
           <p className="text-emerald-100 mt-4 text-sm">Scan QR code for quick mobile download</p>
@@ -705,10 +722,12 @@ export default function OTConektLanding() {
 
       {/* Sticky Mobile CTA */}
       <div className="fixed bottom-0 left-0 right-0 bg-emerald-600 p-4 md:hidden z-40">
-        <Button className="w-full bg-white text-emerald-600 hover:bg-gray-100 font-semibold">
-          <Download className="mr-2 h-5 w-5" />
-          Download OTConekt Now
-        </Button>
+        <Link href="https://expo.dev/accounts/saintdannyyy/projects/otconekt/builds/76f2ef78-9b8c-4960-adcd-c4a07887de92" target="_blank" rel="noopener noreferrer">
+          <Button className="w-full bg-white text-emerald-600 hover:bg-gray-100 font-semibold">
+            <Download className="mr-2 h-5 w-5" />
+            Download OTConekt Now
+          </Button>
+        </Link>
       </div>
     </div>
   )
