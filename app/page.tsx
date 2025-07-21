@@ -318,24 +318,26 @@ export default function OTConektLanding() {
             </p>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.1 + 0.2}s` }}
-              >
-                <Card className="hover:shadow-2xl transition-shadow duration-300 bg-white/70 backdrop-blur-lg border border-white/40 rounded-2xl">
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-center w-12 h-12 bg-emerald-100 rounded-lg mb-4 shadow">
-                      <feature.icon className="h-6 w-6 text-emerald-600" />
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
-                    <p className="text-gray-600">{feature.description}</p>
-                  </CardContent>
-                </Card>
-              </div>
-            ))}
+          <div className="mt-16 overflow-hidden">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="animate-fade-in-up"
+                  style={{ animationDelay: `${index * 0.12 + 0.2}s` }}
+                >
+                  <Card className="hover:shadow-2xl transition-shadow duration-300 bg-white/70 backdrop-blur-lg border border-white/40 rounded-2xl">
+                    <CardContent className="p-6">
+                      <div className="flex items-center justify-center w-12 h-12 bg-emerald-100 rounded-lg mb-4 shadow">
+                        <feature.icon className="h-6 w-6 text-emerald-600" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
+                      <p className="text-gray-600">{feature.description}</p>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
