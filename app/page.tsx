@@ -28,7 +28,9 @@ import {
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+
 import { useState } from "react"
+import { motion } from "framer-motion"
 
 export default function OTConektLanding() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -117,9 +119,9 @@ export default function OTConektLanding() {
   ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-gray-100 via-white to-emerald-50">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+      <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
@@ -215,11 +217,22 @@ export default function OTConektLanding() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-emerald-50 via-white to-blue-50 pt-16 pb-20 sm:pt-24 sm:pb-32">
+      <motion.section 
+        className="relative bg-gradient-to-br from-emerald-50 via-white to-blue-50 pt-16 pb-20 sm:pt-24 sm:pb-32"
+        initial={{ opacity: 0, y: 40 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
-            <div className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
-              <h1 className="text-4xl font-bold text-gray-900 tracking-tight sm:text-5xl md:text-6xl">
+            <motion.div 
+              className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left"
+              initial={{ opacity: 0, x: -40 }} 
+              whileInView={{ opacity: 1, x: 0 }} 
+              viewport={{ once: true }} 
+              transition={{ duration: 0.7, delay: 0.1 }}
+            >
+              <h1 className="text-4xl font-bold text-gray-900 tracking-tight sm:text-5xl md:text-6xl drop-shadow-md">
                 Transform Your <span className="text-emerald-600">Recovery Journey</span> with OTConekt
               </h1>
               <p className="mt-6 text-xl text-gray-600 leading-8">
@@ -227,14 +240,14 @@ export default function OTConektLanding() {
                 your fingertips.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4 sm:justify-center lg:justify-start">
-                <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-lg px-8 py-3">
+                <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-lg px-8 py-3 shadow-lg transition-all duration-200">
                   <Download className="mr-2 h-5 w-5" />
                   Download App
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-emerald-600 text-emerald-600 hover:bg-emerald-50 text-lg px-8 py-3 bg-transparent"
+                  className="border-emerald-600 text-emerald-600 hover:bg-emerald-50 text-lg px-8 py-3 bg-white/60 backdrop-blur-md shadow transition-all duration-200"
                 >
                   <Play className="mr-2 h-5 w-5" />
                   Watch Demo
@@ -254,19 +267,30 @@ export default function OTConektLanding() {
                   24/7 Available
                 </div>
               </div>
-            </div>
-            <div className="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
-              <Image
-                src="/ot.png?height=600&width=500"
-                alt="OTConekt App Interface"
-                width={500}
-                height={600}
-                className="w-full rounded-2xl shadow-2xl"
-              />
-            </div>
+            </motion.div>
+            <motion.div 
+              className="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center"
+              initial={{ opacity: 0, x: 40 }} 
+              whileInView={{ opacity: 1, x: 0 }} 
+              viewport={{ once: true }} 
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
+              <motion.div 
+                animate={{ y: [0, -10, 0] }} 
+                transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+              >
+                <Image
+                  src="/ot.png?height=600&width=500"
+                  alt="OTConekt App Interface"
+                  width={500}
+                  height={600}
+                  className="w-full rounded-3xl shadow-2xl bg-white/60 backdrop-blur-lg border border-white/40"
+                />
+              </motion.div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Stats Section */}
       <section className="py-12 bg-white">
@@ -283,37 +307,51 @@ export default function OTConektLanding() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 bg-gray-50">
+      <motion.section 
+        id="features" 
+        className="py-20 bg-gray-50/80 backdrop-blur-lg"
+        initial={{ opacity: 0, y: 40 }} 
+        whileInView={{ opacity: 1, y: 0 }} 
+        viewport={{ once: true }} 
+        transition={{ duration: 0.8, delay: 0.1 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <Badge className="bg-emerald-100 text-emerald-800 mb-4">Core Features</Badge>
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl drop-shadow-md">
               Everything You Need for Successful Recovery
             </h2>
             <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-              Our comprehensive platform provides all the tools and support you need for effective occupational therapy,
-              whether you're a client or therapist.
+              Our comprehensive platform provides all the tools and support you need for effective occupational therapy, whether you're a client or therapist.
             </p>
           </div>
 
           <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-center w-12 h-12 bg-emerald-100 rounded-lg mb-4">
-                    <feature.icon className="h-6 w-6 text-emerald-600" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
-                </CardContent>
-              </Card>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <Card className="hover:shadow-2xl transition-shadow duration-300 bg-white/70 backdrop-blur-lg border border-white/40 rounded-2xl">
+                  <CardContent className="p-6">
+                    <div className="flex items-center justify-center w-12 h-12 bg-emerald-100 rounded-lg mb-4 shadow">
+                      <feature.icon className="h-6 w-6 text-emerald-600" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
+                    <p className="text-gray-600">{feature.description}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Dual Audience Section */}
-      <section className="py-20 bg-white">
+      <motion.section className="py-20 bg-white/80 backdrop-blur-lg" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.1 }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Built for Everyone in the Recovery Journey</h2>
@@ -376,10 +414,10 @@ export default function OTConektLanding() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Technology Showcase */}
-      <section className="py-20 bg-gray-50">
+      <motion.section className="py-20 bg-gray-50/80 backdrop-blur-lg" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.1 }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
             <div>
@@ -446,10 +484,10 @@ export default function OTConektLanding() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-white">
+      <motion.section className="py-20 bg-white/80 backdrop-blur-lg" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.1 }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <Badge className="bg-emerald-100 text-emerald-800 mb-4">Testimonials</Badge>
@@ -489,10 +527,10 @@ export default function OTConektLanding() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Security & Compliance */}
-      <section id="security" className="py-20 bg-gray-50">
+      <motion.section id="security" className="py-20 bg-gray-50/80 backdrop-blur-lg" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.1 }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <Badge className="bg-emerald-100 text-emerald-800 mb-4">Security & Compliance</Badge>
@@ -540,10 +578,10 @@ export default function OTConektLanding() {
             </Card>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Download Section */}
-      <section className="py-20 bg-gradient-to-br from-emerald-600 to-emerald-700">
+      <motion.section className="py-20 bg-gradient-to-br from-emerald-600 to-emerald-700 shadow-2xl" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.1 }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white sm:text-4xl mb-4">Get Started Today</h2>
           <p className="text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">
@@ -572,10 +610,10 @@ export default function OTConektLanding() {
           </div>
           <p className="text-emerald-100 mt-4 text-sm">Scan QR code for quick mobile download</p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-gray-900/95 text-white py-12 backdrop-blur-lg shadow-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2">
