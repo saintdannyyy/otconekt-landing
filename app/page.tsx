@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Separator } from "@/components/ui/separator"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Separator } from "@/components/ui/separator";
 import {
   Smartphone,
   Video,
@@ -25,31 +25,33 @@ import {
   BarChart3,
   Menu,
   X,
-} from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
-import { useState } from "react"
-
+import { useState } from "react";
 
 export default function OTConektLanding() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const features = [
     {
       icon: Clock,
       title: "24/7 Access",
-      description: "Connect with licensed occupational therapists anytime, anywhere",
+      description:
+        "Connect with licensed occupational therapists anytime, anywhere",
     },
     {
       icon: UserCheck,
       title: "Easy Access",
-      description: "Get paired with therapists based on your specific needs and location",
+      description:
+        "Get paired with therapists based on your specific needs and location",
     },
     {
       icon: Video,
       title: "Secure Video Calls",
-      description: "HIPAA-compliant video consultations with crystal-clear quality",
+      description:
+        "HIPAA-compliant video consultations with crystal-clear quality",
     },
     {
       icon: Calendar,
@@ -59,14 +61,16 @@ export default function OTConektLanding() {
     {
       icon: BarChart3,
       title: "Progress Tracking",
-      description: "Monitor your recovery journey with detailed analytics and insights",
+      description:
+        "Monitor your recovery journey with detailed analytics and insights",
     },
     {
       icon: MessageCircle,
       title: "Real-time Communication",
-      description: "Stay connected with your therapist through secure messaging",
+      description:
+        "Stay connected with your therapist through secure messaging",
     },
-  ]
+  ];
 
   const clientFeatures = [
     "Easy appointment booking",
@@ -75,7 +79,7 @@ export default function OTConektLanding() {
     "Secure file sharing",
     "Personalized care plans",
     "Mobile-friendly interface",
-  ]
+  ];
 
   const therapistFeatures = [
     "Expand your practice reach",
@@ -84,14 +88,15 @@ export default function OTConektLanding() {
     "Secure documentation system",
     "Revenue tracking dashboard",
     "Professional networking",
-  ]
+  ];
 
   const testimonials = [
     {
       name: "Sarah Johnson",
       role: "Recovery Patient",
       avatar: "/placeholder.svg?height=40&width=40",
-      content: "OTConekt made my recovery so much easier. Having 24/7 access to my therapist changed everything.",
+      content:
+        "OTConekt made my recovery so much easier. Having 24/7 access to my therapist changed everything.",
       rating: 5,
     },
     {
@@ -106,17 +111,18 @@ export default function OTConektLanding() {
       name: "Emily Rodriguez",
       role: "Chronic Pain Patient",
       avatar: "/placeholder.svg?height=40&width=40",
-      content: "The convenience and professional quality of care exceeded my expectations. Highly recommended!",
+      content:
+        "The convenience and professional quality of care exceeded my expectations. Highly recommended!",
       rating: 5,
     },
-  ]
+  ];
 
   const stats = [
     { number: "$4.2B", label: "Global OT Market" },
     { number: "24/7", label: "Availability" },
     { number: "100%", label: "HIPAA Compliant" },
     { number: "2", label: "Platforms Supported" },
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-100 via-white to-emerald-50">
@@ -126,15 +132,26 @@ export default function OTConektLanding() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0 flex items-center">
-                <Image src="/ot.png" alt="OTConekt Logo" width={40} height={40} className="rounded-full" />
-                <span className="ml-2 text-xl font-bold text-gray-900">OTConekt</span>
+                <Image
+                  src="/ot.png"
+                  alt="OTConekt Logo"
+                  width={40}
+                  height={40}
+                  className="rounded-full"
+                />
+                <span className="ml-2 text-xl font-bold text-gray-900">
+                  OTConekt
+                </span>
               </div>
             </div>
 
             {/* Desktop Navigation */}
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
-                <Link href="#features" className="text-gray-600 hover:text-emerald-600 px-3 py-2 text-sm font-medium">
+                <Link
+                  href="#features"
+                  className="text-gray-600 hover:text-emerald-600 px-3 py-2 text-sm font-medium"
+                >
                   Features
                 </Link>
                 <Link
@@ -149,14 +166,21 @@ export default function OTConektLanding() {
                 >
                   For Therapists
                 </Link>
-                <Link href="#security" className="text-gray-600 hover:text-emerald-600 px-3 py-2 text-sm font-medium">
+                <Link
+                  href="#security"
+                  className="text-gray-600 hover:text-emerald-600 px-3 py-2 text-sm font-medium"
+                >
                   Security
                 </Link>
               </div>
             </div>
 
             <div className="hidden md:flex items-center space-x-4">
-              <Link href="https://expo.dev/accounts/saintdannyyy/projects/otconekt/builds/76f2ef78-9b8c-4960-adcd-c4a07887de92" target="_blank" rel="noopener noreferrer">
+              <Link
+                href={process.env.NEXT_PUBLIC_DOWNLOAD_LINK!}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
                   variant="outline"
                   className="border-emerald-600 text-emerald-600 hover:bg-emerald-50 bg-transparent w-full md:w-auto"
@@ -164,15 +188,29 @@ export default function OTConektLanding() {
                   Join as Therapist
                 </Button>
               </Link>
-              <Link href="https://expo.dev/accounts/saintdannyyy/projects/otconekt/builds/76f2ef78-9b8c-4960-adcd-c4a07887de92" target="_blank" rel="noopener noreferrer">
-                <Button className="bg-emerald-600 hover:bg-emerald-700 w-full md:w-auto">Download App</Button>
+              <Link
+                href={process.env.NEXT_PUBLIC_DOWNLOAD_LINK!}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="bg-emerald-600 hover:bg-emerald-700 w-full md:w-auto">
+                  Download App
+                </Button>
               </Link>
             </div>
 
             {/* Mobile menu button */}
             <div className="md:hidden">
-              <Button variant="ghost" size="sm" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-                {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                {mobileMenuOpen ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <Menu className="h-6 w-6" />
+                )}
               </Button>
             </div>
           </div>
@@ -207,7 +245,11 @@ export default function OTConektLanding() {
                 Security
               </Link>
               <div className="px-3 py-2 space-y-2">
-                <Link href="https://expo.dev/accounts/saintdannyyy/projects/otconekt/builds/76f2ef78-9b8c-4960-adcd-c4a07887de92" target="_blank" rel="noopener noreferrer">
+                <Link
+                  href={process.env.NEXT_PUBLIC_DOWNLOAD_LINK!}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Button
                     variant="outline"
                     className="w-full border-emerald-600 text-emerald-600 hover:bg-emerald-50 bg-transparent"
@@ -215,8 +257,14 @@ export default function OTConektLanding() {
                     Join as Therapist
                   </Button>
                 </Link>
-                <Link href="https://expo.dev/accounts/saintdannyyy/projects/otconekt/builds/76f2ef78-9b8c-4960-adcd-c4a07887de92" target="_blank" rel="noopener noreferrer">
-                  <Button className="w-full bg-emerald-600 hover:bg-emerald-700">Download App</Button>
+                <Link
+                  href={process.env.NEXT_PUBLIC_DOWNLOAD_LINK!}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="w-full bg-emerald-600 hover:bg-emerald-700">
+                    Download App
+                  </Button>
                 </Link>
               </div>
             </div>
@@ -225,24 +273,29 @@ export default function OTConektLanding() {
       </nav>
 
       {/* Hero Section */}
-      <section 
-        className="relative bg-gradient-to-br from-emerald-50 via-white to-blue-50 pt-16 pb-20 sm:pt-24 sm:pb-32 animate-fade-in-up"
-      >
+      <section className="relative bg-gradient-to-br from-emerald-50 via-white to-blue-50 pt-16 pb-20 sm:pt-24 sm:pb-32 animate-fade-in-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
-            <div 
-              className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left animate-fade-in-left"
-            >
+            <div className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left animate-fade-in-left">
               <h1 className="text-4xl font-bold text-gray-900 tracking-tight sm:text-5xl md:text-6xl drop-shadow-md">
-                Transform Your <span className="text-emerald-600">Recovery Journey</span> with OTConekt
+                Transform Your{" "}
+                <span className="text-emerald-600">Recovery Journey</span> with
+                OTConekt
               </h1>
               <p className="mt-6 text-xl text-gray-600 leading-8">
-                Connect with licensed occupational therapists anytime, anywhere. Professional rehabilitation services at
-                your fingertips.
+                Connect with licensed occupational therapists anytime, anywhere.
+                Professional rehabilitation services at your fingertips.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4 sm:justify-center lg:justify-start">
-                <Link href="https://expo.dev/accounts/saintdannyyy/projects/otconekt/builds/76f2ef78-9b8c-4960-adcd-c4a07887de92" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-lg px-8 py-3 shadow-lg transition-all duration-200">
+                <Link
+                  href={process.env.NEXT_PUBLIC_DOWNLOAD_LINK!}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    size="lg"
+                    className="bg-emerald-600 hover:bg-emerald-700 text-lg px-8 py-3 shadow-lg transition-all duration-200"
+                  >
                     <Download className="mr-2 h-5 w-5" />
                     Download App
                   </Button>
@@ -271,9 +324,7 @@ export default function OTConektLanding() {
                 </div>
               </div>
             </div>
-            <div 
-              className="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center animate-fade-in-right"
-            >
+            <div className="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center animate-fade-in-right">
               <div className="animate-bounce-slow">
                 <Image
                   src="/ot.png?height=600&width=500"
@@ -294,7 +345,9 @@ export default function OTConektLanding() {
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl font-bold text-emerald-600">{stat.number}</div>
+                <div className="text-3xl font-bold text-emerald-600">
+                  {stat.number}
+                </div>
                 <div className="text-sm text-gray-600 mt-1">{stat.label}</div>
               </div>
             ))}
@@ -303,18 +356,22 @@ export default function OTConektLanding() {
       </section>
 
       {/* Features Section */}
-      <section 
-        id="features" 
+      <section
+        id="features"
         className="py-20 bg-gray-50/80 backdrop-blur-lg animate-fade-in-up"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <Badge className="bg-emerald-100 text-emerald-800 mb-4">Core Features</Badge>
+            <Badge className="bg-emerald-100 text-emerald-800 mb-4">
+              Core Features
+            </Badge>
             <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl drop-shadow-md">
               Everything You Need for Successful Recovery
             </h2>
             <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-              Our comprehensive platform provides all the tools and support you need for effective occupational therapy, whether you're a client or therapist.
+              Our comprehensive platform provides all the tools and support you
+              need for effective occupational therapy, whether you're a client
+              or therapist.
             </p>
           </div>
 
@@ -331,7 +388,9 @@ export default function OTConektLanding() {
                       <div className="flex items-center justify-center w-12 h-12 bg-emerald-100 rounded-lg mb-4 shadow">
                         <feature.icon className="h-6 w-6 text-emerald-600" />
                       </div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                        {feature.title}
+                      </h3>
                       <p className="text-gray-600">{feature.description}</p>
                     </CardContent>
                   </Card>
@@ -346,9 +405,12 @@ export default function OTConektLanding() {
       <section className="py-20 bg-white/80 backdrop-blur-lg animate-fade-in-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Built for Everyone in the Recovery Journey</h2>
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+              Built for Everyone in the Recovery Journey
+            </h2>
             <p className="mt-4 text-xl text-gray-600">
-              Whether you're seeking therapy or providing it, OTConekt has you covered.
+              Whether you're seeking therapy or providing it, OTConekt has you
+              covered.
             </p>
           </div>
 
@@ -361,10 +423,13 @@ export default function OTConektLanding() {
                     <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mr-4">
                       <Users className="h-6 w-6 text-blue-600" />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900">For Clients</h3>
+                    <h3 className="text-2xl font-bold text-gray-900">
+                      For Clients
+                    </h3>
                   </div>
                   <p className="text-gray-600 mb-6">
-                    Get the care you need with convenient access to licensed occupational therapists.
+                    Get the care you need with convenient access to licensed
+                    occupational therapists.
                   </p>
                   <ul className="space-y-3">
                     {clientFeatures.map((feature, index) => (
@@ -374,9 +439,15 @@ export default function OTConektLanding() {
                       </li>
                     ))}
                   </ul>
-                <Link href="https://expo.dev/accounts/saintdannyyy/projects/otconekt/builds/76f2ef78-9b8c-4960-adcd-c4a07887de92" target="_blank" rel="noopener noreferrer">
-                  <Button className="mt-6 w-full bg-blue-600 hover:bg-blue-700">Start Free Trial</Button>
-                </Link>
+                  <Link
+                    href={process.env.NEXT_PUBLIC_DOWNLOAD_LINK!}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="mt-6 w-full bg-blue-600 hover:bg-blue-700">
+                      Start Free Trial
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             </div>
@@ -389,10 +460,13 @@ export default function OTConektLanding() {
                     <div className="flex items-center justify-center w-12 h-12 bg-emerald-100 rounded-lg mr-4">
                       <UserCheck className="h-6 w-6 text-emerald-600" />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900">For Therapists</h3>
+                    <h3 className="text-2xl font-bold text-gray-900">
+                      For Therapists
+                    </h3>
                   </div>
                   <p className="text-gray-600 mb-6">
-                    Expand your practice and help more patients with our comprehensive platform.
+                    Expand your practice and help more patients with our
+                    comprehensive platform.
                   </p>
                   <ul className="space-y-3">
                     {therapistFeatures.map((feature, index) => (
@@ -402,9 +476,15 @@ export default function OTConektLanding() {
                       </li>
                     ))}
                   </ul>
-                <Link href="https://expo.dev/accounts/saintdannyyy/projects/otconekt/builds/76f2ef78-9b8c-4960-adcd-c4a07887de92" target="_blank" rel="noopener noreferrer">
-                  <Button className="mt-6 w-full bg-emerald-600 hover:bg-emerald-700">Join as Therapist</Button>
-                </Link>
+                  <Link
+                    href={process.env.NEXT_PUBLIC_DOWNLOAD_LINK!}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="mt-6 w-full bg-emerald-600 hover:bg-emerald-700">
+                      Join as Therapist
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             </div>
@@ -417,13 +497,15 @@ export default function OTConektLanding() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
             <div>
-              <Badge className="bg-emerald-100 text-emerald-800 mb-4">Technology</Badge>
+              <Badge className="bg-emerald-100 text-emerald-800 mb-4">
+                Technology
+              </Badge>
               <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-6">
                 Cutting-Edge Technology for Better Care
               </h2>
               <p className="text-xl text-gray-600 mb-8">
-                Built with modern technology stack to ensure reliability, security, and seamless user experience across
-                all platforms.
+                Built with modern technology stack to ensure reliability,
+                security, and seamless user experience across all platforms.
               </p>
 
               <div className="space-y-6">
@@ -432,8 +514,12 @@ export default function OTConektLanding() {
                     <Smartphone className="h-4 w-4 text-emerald-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Cross-Platform Application</h4>
-                    <p className="text-gray-600">Seamless experience on iOS, Android</p>
+                    <h4 className="font-semibold text-gray-900">
+                      Cross-Platform Application
+                    </h4>
+                    <p className="text-gray-600">
+                      Seamless experience on iOS, Android
+                    </p>
                   </div>
                 </div>
 
@@ -442,8 +528,12 @@ export default function OTConektLanding() {
                     <Zap className="h-4 w-4 text-emerald-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Real-time Communication</h4>
-                    <p className="text-gray-600">Seamless messaging between Therapist and Client</p>
+                    <h4 className="font-semibold text-gray-900">
+                      Real-time Communication
+                    </h4>
+                    <p className="text-gray-600">
+                      Seamless messaging between Therapist and Client
+                    </p>
                   </div>
                 </div>
 
@@ -452,8 +542,12 @@ export default function OTConektLanding() {
                     <Video className="h-4 w-4 text-emerald-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">WebRTC Video Integration</h4>
-                    <p className="text-gray-600">High-quality, secure video consultations</p>
+                    <h4 className="font-semibold text-gray-900">
+                      WebRTC Video Integration
+                    </h4>
+                    <p className="text-gray-600">
+                      High-quality, secure video consultations
+                    </p>
                   </div>
                 </div>
 
@@ -463,7 +557,9 @@ export default function OTConektLanding() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Easy To Use</h4>
-                    <p className="text-gray-600">Install directly from browser.</p>
+                    <p className="text-gray-600">
+                      Install directly from browser.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -486,26 +582,40 @@ export default function OTConektLanding() {
       <section className="py-20 bg-white/80 backdrop-blur-lg animate-fade-in-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge className="bg-emerald-100 text-emerald-800 mb-4">Testimonials</Badge>
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Trusted by Thousands of Users</h2>
+            <Badge className="bg-emerald-100 text-emerald-800 mb-4">
+              Testimonials
+            </Badge>
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+              Trusted by Thousands of Users
+            </h2>
             <p className="mt-4 text-xl text-gray-600">
-              See what our clients and therapists are saying about their experience.
+              See what our clients and therapists are saying about their
+              experience.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
+              <Card
+                key={index}
+                className="hover:shadow-lg transition-shadow duration-300"
+              >
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                      <Star
+                        key={i}
+                        className="h-4 w-4 text-yellow-400 fill-current"
+                      />
                     ))}
                   </div>
                   <p className="text-gray-600 mb-4">"{testimonial.content}"</p>
                   <div className="flex items-center">
                     <Avatar className="h-10 w-10 mr-3">
-                      <AvatarImage src={testimonial.avatar || "/placeholder.svg"} alt={testimonial.name} />
+                      <AvatarImage
+                        src={testimonial.avatar || "/placeholder.svg"}
+                        alt={testimonial.name}
+                      />
                       <AvatarFallback>
                         {testimonial.name
                           .split(" ")
@@ -514,8 +624,12 @@ export default function OTConektLanding() {
                       </AvatarFallback>
                     </Avatar>
                     <div>
-                      <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                      <div className="text-sm text-gray-600">{testimonial.role}</div>
+                      <div className="font-semibold text-gray-900">
+                        {testimonial.name}
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        {testimonial.role}
+                      </div>
                     </div>
                   </div>
                 </CardContent>
@@ -526,13 +640,21 @@ export default function OTConektLanding() {
       </section>
 
       {/* Security & Compliance */}
-      <section id="security" className="py-20 bg-gray-50/80 backdrop-blur-lg animate-fade-in-up">
+      <section
+        id="security"
+        className="py-20 bg-gray-50/80 backdrop-blur-lg animate-fade-in-up"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge className="bg-emerald-100 text-emerald-800 mb-4">Security & Compliance</Badge>
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Your Privacy and Security Come First</h2>
+            <Badge className="bg-emerald-100 text-emerald-800 mb-4">
+              Security & Compliance
+            </Badge>
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+              Your Privacy and Security Come First
+            </h2>
             <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-              We maintain the highest standards of security and compliance to protect your sensitive health information.
+              We maintain the highest standards of security and compliance to
+              protect your sensitive health information.
             </p>
           </div>
 
@@ -542,9 +664,12 @@ export default function OTConektLanding() {
                 <div className="flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full mx-auto mb-4">
                   <Shield className="h-8 w-8 text-emerald-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">HIPAA Compliant</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  HIPAA Compliant
+                </h3>
                 <p className="text-gray-600">
-                  Full compliance with healthcare privacy regulations to protect your sensitive information.
+                  Full compliance with healthcare privacy regulations to protect
+                  your sensitive information.
                 </p>
               </CardContent>
             </Card>
@@ -554,9 +679,12 @@ export default function OTConektLanding() {
                 <div className="flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full mx-auto mb-4">
                   <Lock className="h-8 w-8 text-emerald-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">End-to-End Encryption</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  End-to-End Encryption
+                </h3>
                 <p className="text-gray-600">
-                  All communications and data are encrypted using industry-standard protocols.
+                  All communications and data are encrypted using
+                  industry-standard protocols.
                 </p>
               </CardContent>
             </Card>
@@ -566,9 +694,12 @@ export default function OTConektLanding() {
                 <div className="flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full mx-auto mb-4">
                   <CheckCircle className="h-8 w-8 text-emerald-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Privacy First</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  Privacy First
+                </h3>
                 <p className="text-gray-600">
-                  Your data is never shared without consent and you maintain full control over your information.
+                  Your data is never shared without consent and you maintain
+                  full control over your information.
                 </p>
               </CardContent>
             </Card>
@@ -579,20 +710,37 @@ export default function OTConektLanding() {
       {/* Download Section */}
       <section className="py-20 bg-gradient-to-br from-emerald-600 to-emerald-700 shadow-2xl animate-fade-in-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white sm:text-4xl mb-4">Get Started Today</h2>
+          <h2 className="text-3xl font-bold text-white sm:text-4xl mb-4">
+            Get Started Today
+          </h2>
           <p className="text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">
-            Download OTConekt now and take the first step towards better occupational therapy care.
+            Download OTConekt now and take the first step towards better
+            occupational therapy care.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <Link href="https://expo.dev/accounts/saintdannyyy/projects/otconekt/builds/76f2ef78-9b8c-4960-adcd-c4a07887de92" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-white text-emerald-600 hover:bg-gray-100 text-lg px-8 py-3">
+            <Link
+              href={process.env.NEXT_PUBLIC_DOWNLOAD_LINK!}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                size="lg"
+                className="bg-white text-emerald-600 hover:bg-gray-100 text-lg px-8 py-3"
+              >
                 <Download className="mr-2 h-5 w-5" />
                 Download for iOS
               </Button>
             </Link>
-            <Link href="https://expo.dev/accounts/saintdannyyy/projects/otconekt/builds/76f2ef78-9b8c-4960-adcd-c4a07887de92" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-white text-emerald-600 hover:bg-gray-100 text-lg px-8 py-3">
+            <Link
+              href={process.env.NEXT_PUBLIC_DOWNLOAD_LINK!}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                size="lg"
+                className="bg-white text-emerald-600 hover:bg-gray-100 text-lg px-8 py-3"
+              >
                 <Download className="mr-2 h-5 w-5" />
                 Download for Android
               </Button>
@@ -607,7 +755,9 @@ export default function OTConektLanding() {
               height={150}
             />
           </div>
-          <p className="text-emerald-100 mt-4 text-sm">Scan QR code for quick mobile download</p>
+          <p className="text-emerald-100 mt-4 text-sm">
+            Scan QR code for quick mobile download
+          </p>
         </div>
       </section>
 
@@ -621,7 +771,8 @@ export default function OTConektLanding() {
                 <span className="ml-2 text-xl font-bold">OTConekt</span>
               </div>
               <p className="text-gray-400 mb-4 max-w-md">
-                Revolutionizing occupational therapy through innovative technology and compassionate care.
+                Revolutionizing occupational therapy through innovative
+                technology and compassionate care.
               </p>
               <div className="flex space-x-4">
                 <Badge className="bg-emerald-600">HIPAA Compliant</Badge>
@@ -686,7 +837,9 @@ export default function OTConektLanding() {
           <Separator className="my-8 bg-gray-800" />
 
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">© 2024 OTConekt. All rights reserved.</p>
+            <p className="text-gray-400 text-sm">
+              © 2024 OTConekt. All rights reserved.
+            </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link href="#" className="text-gray-400 hover:text-white text-sm">
                 Privacy Policy
@@ -704,7 +857,11 @@ export default function OTConektLanding() {
 
       {/* Sticky Mobile CTA */}
       <div className="fixed bottom-0 left-0 right-0 bg-emerald-600 p-4 md:hidden z-40">
-        <Link href="https://expo.dev/accounts/saintdannyyy/projects/otconekt/builds/76f2ef78-9b8c-4960-adcd-c4a07887de92" target="_blank" rel="noopener noreferrer">
+        <Link
+          href={process.env.NEXT_PUBLIC_DOWNLOAD_LINK!}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Button className="w-full bg-white text-emerald-600 hover:bg-gray-100 font-semibold">
             <Download className="mr-2 h-5 w-5" />
             Download OTConekt Now
@@ -712,5 +869,5 @@ export default function OTConektLanding() {
         </Link>
       </div>
     </div>
-  )
+  );
 }
